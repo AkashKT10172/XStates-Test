@@ -17,7 +17,7 @@ function States() {
 
   const fetchCountries = async () => {
     try {
-      const countriesRes = await axios.get("https://xstates-backend.onrender.com/countries")
+      const countriesRes = await axios.get("https://location-selector.labs.crio.do/countries")
       setCountries(countriesRes.data)
     } catch (error) {
       console.error("Error fetching countries:", error)
@@ -26,7 +26,7 @@ function States() {
 
   const fetchStates = async (countryName) => {
     try {
-      const statesRes = await axios.get(`https://xstates-backend.onrender.com/country=${countryName}/states`)
+      const statesRes = await axios.get(`https://location-selector.labs.crio.do/country=${countryName}/states`)
       setStates(statesRes.data)
     } catch (error) {
       console.error("Error fetching states:", error)
@@ -35,7 +35,7 @@ function States() {
 
   const fetchCities = async (countryName, stateName) => {
     try {
-      const citeisRes = await axios.get(`https://xstates-backend.onrender.com/country=${countryName}/state=${stateName}/cities`)
+      const citeisRes = await axios.get(`https://location-selector.labs.crio.do/country=${countryName}/state=${stateName}/cities`)
       setCities(citeisRes.data)
       console.log(citeisRes);
     } catch (error) {
